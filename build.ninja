@@ -1,0 +1,8 @@
+rule cc
+  command = gcc $cflags -c $in -o $out
+
+rule link
+  command = gcc $in -o $out
+
+build server.o: cc server.c
+build server: link server.o
